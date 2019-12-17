@@ -1,0 +1,96 @@
+﻿<!DOCTYPE HTML>
+<!--
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>上肢介紹</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <style>
+        #header .logo:hover {
+            color: #ffffff !important;
+            border-color: #ffffff !important;
+        }
+    </style>
+</head>
+<body class="is-loading">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="#" class="logo" style="font-family:'Microsoft JhengHei';">上肢介紹</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class=" links clearfix ">
+                <li><a style="cursor:pointer;" a href="upperlimb_introduce.html">回介紹</a></li>
+                <li><a href="#tab1" onclick="play()">腕關節</a></li>
+                <li><a href="#tab2" onclick="play1()">手指關節</a></li>
+                <li><a href="#tab3" onclick="play2()">肘關節</a></li>
+            </ul>
+        </nav>
+        <!-- Main -->
+        <div id="main" style="padding:0px;">
+            <section style="padding:0px;">
+                <center style="padding:0px;">
+                    <div id="tab1" class="content" style="padding:0px;">
+                        <img src="images/up-introduce/CarpalJoint.jpg">
+                        <!--<audio id="audio" src="sound/s1.wav"></audio>-->
+                    </div>
+                    <div id="tab2" class="content" style="display:none;">
+                        <img src="images/up-introduce/FingerJoint.jpg">
+                        <!--<audio id="audio1" src="sound/s2.wav"></audio>-->
+                    </div>
+                    <div id="tab3" class="content" style="display:none;">
+                        <img src="images/up-introduce/ElbowJoint.jpg">
+                        <!--<audio id="audio2" src="sound/s3.wav"></audio>-->
+                    </div>
+                </center>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(function () {
+            var $li = $('ul.clearfix li');
+
+            // 進入時預設點擊第一個頁籤，除了第一個 content 其他 content 隱藏
+            $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.content').hide();
+
+            $li.click(function () {
+                $($(this).find('a').attr('href')).show().siblings('.content').hide();
+                $(this).addClass('active').siblings('.active').removeClass('active');
+            });
+        });
+        //function play() {
+        //    var audio = document.getElementById("audio");
+        //    audio.play();
+        //}
+        //function play1() {
+        //    var audio = document.getElementById("audio1");
+        //    audio.play();
+        //}
+        //function play2() {
+        //    var audio = document.getElementById("audio2");
+        //    audio.play();
+        //}
+    </script>
+
+</body>
+</html>
